@@ -1,0 +1,12 @@
+{
+  "name": "littlecow.js",
+  "version": "0.0.5",
+  "description": "牛牛來到node.js了!",
+  "main": "cow.js",
+  "scripts": {
+    "test": "node cow.js"
+  },
+  "author": "Charlie",
+  "license": "MIT",
+  "repository": "git://github.com/charlie-moomoo/littlecow.js",
+}
