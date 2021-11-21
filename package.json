@@ -1,6 +1,6 @@
 {
   "name": "littlecow.js",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "牛牛來到node.js了!",
   "main": "cow.js",
   "scripts": {
@@ -9,4 +9,8 @@
   "author": "Charlie",
   "license": "MIT",
   "repository": "git://github.com/charlie-moomoo/littlecow.js",
+  "homepage": "https://charlie-moomoo.github.io/littlecow.js/",
+  "dependencies": {
+    "request":">=2.88.2"
+  }
 }

@@ -1,3 +1,4 @@
+const request = require('request')
 var cow = {
 haha: function () {
 	 function sleep(milliseconds) { var start = new Date().getTime(); for (var i = 0; i < 1e7; i++) { if ((new Date().getTime() - start) > milliseconds){ break; } } }
@@ -37,6 +38,27 @@ coin: function (face) {
 				console.log('哞!現在的時間是:' + new Date().getFullYear().toString() + '年' + (new Date().getMonth()+1).toString() + '月' + new Date().getDate().toString() + '日 星期' + new Date().getDay().toString() + ' ' + new Date().getHours().toString() + ':' + new Date().getMinutes().toString() + ':' + new Date().getSeconds().toString())
 				return '哞!現在的時間是:' + new Date().getFullYear().toString() + '年' + (new Date().getMonth()+1).toString() + '月' + new Date().getDate().toString() + '日 星期' + new Date().getDay().toString() + ' ' + new Date().getHours().toString() + ':' + new Date().getMinutes().toString() + ':' + new Date().getSeconds().toString()
 				},
+  shortlink:function (link){
+if ((link.startsWith('http://')) || (link.startsWith('https://'))) {
+const options = {
+url: 'https://mooshort.repl.co/api/create',
+form: {
+'url':link
 }
+};
+        
+request.post(options, (err, res, body) => {
+if (err) {
+return console.log(err);
+}
+cowshortlink=(JSON.parse(body)['url'])
+  console.log('哞!你的短網址: '+cowshortlink)
+  return '哞!你的短網址: '+cowshortlink
+})
+} else {
+  console.log('哞!這不是網址!')
+  return '哞!這不是網址!'
+             }
+  }}
 module.exports = cow
 return
