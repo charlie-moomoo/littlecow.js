@@ -1,4 +1,5 @@
 const request = require('request')
+const chineseday = require('chineseday')
 var cow = {
 haha: function () {
 	 function sleep(milliseconds) { var start = new Date().getTime(); for (var i = 0; i < 1e7; i++) { if ((new Date().getTime() - start) > milliseconds){ break; } } }
@@ -35,8 +36,8 @@ coin: function (face) {
 			return text
 			},
 			time: function () {
-				console.log('哞!現在的時間是:' + new Date().getFullYear().toString() + '年' + (new Date().getMonth()+1).toString() + '月' + new Date().getDate().toString() + '日 星期' + new Date().getDay().toString() + ' ' + new Date().getHours().toString() + ':' + new Date().getMinutes().toString() + ':' + new Date().getSeconds().toString())
-				return '哞!現在的時間是:' + new Date().getFullYear().toString() + '年' + (new Date().getMonth()+1).toString() + '月' + new Date().getDate().toString() + '日 星期' + new Date().getDay().toString() + ' ' + new Date().getHours().toString() + ':' + new Date().getMinutes().toString() + ':' + new Date().getSeconds().toString()
+				console.log('哞!現在的時間是:' + new Date().getFullYear().toString() + '年' + (new Date().getMonth()+1).toString() + '月' + new Date().getDate().toString() + '日 星期' + chineseday.short(new Date()) + ' ' + new Date().getHours().toString() + ':' + new Date().getMinutes().toString() + ':' + new Date().getSeconds().toString())
+				return '哞!現在的時間是:' + new Date().getFullYear().toString() + '年' + (new Date().getMonth()+1).toString() + '月' + new Date().getDate().toString() + '日 星期' + chineseday.short(new Date()) + ' ' + new Date().getHours().toString() + ':' + new Date().getMinutes().toString() + ':' + new Date().getSeconds().toString()
 				},
   shortlink:function (link){
 if ((link.startsWith('http://')) || (link.startsWith('https://'))) {
